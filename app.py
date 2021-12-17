@@ -246,7 +246,7 @@ def modificarlibro():
 @app.route("/libro_lista")
 def libro_lista():
     consulta_libro = Libro.query.join(Genero, Libro.id_genero == Genero.id_genero).join(Autor, Libro.id_autor == Autor.id_autor).join(Editorial, Libro.id_editorial == Editorial.id_editorial).add_columns(Genero.nombre_genero, Libro.titulo_libro, Libro.numero_paginas, Libro.formato, Autor.nombre_autor, Editorial.nombre_editorial, Libro.fecha_publicacion, Libro.volumen, Libro.id_libro)   
-    return render_template("listaLibro.html", consulta = consulta_libro)
+    return render_template("listalibro.html", consulta = consulta_libro)
 
 
 
