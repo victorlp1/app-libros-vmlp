@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <section class="hero is-primary is-fullheight">
+    <div class="hero-body"  style="background-image: url('https://media.istockphoto.com/photos/library-bookshelves-with-books-and-textbooks-learning-and-education-picture-id1200326335?k=20&m=1200326335&s=612x612&w=0&h=TXy8Z48ULgGdJNWaNSXlGR5oQHCYD9rbBysf7U9w0HA=');">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+            <!--Formulario-->
+            <form action="/registrarLibro" method="post" class="box">
+              <div class="field">
+                <label for="" class="label">Titulo libro</label>
+                <div class="control has-icons-left">
+                  <input type="text" name="titulo_libro" class="input" required>
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                </div>
+                </div>
+                <div class="field">
+                  <label for="" class="label">Fecha de publicacion</label>
+                  <div class="control has-icons-left">
+                    <input type="date" name="fecha_publicacion" class="input" required>
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-lock"></i>
+                    </span>
+                </div>
+                </div>
+                <div class="field">
+                    <label for="" class="label">Numero de paginas</label>
+                    <div class="control has-icons-left">
+                      <input type="text" name="numero_paginas" class="input" required>
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-lock"></i>
+                      </span>
+                  </div>
+                  </div>
+                  <div class="field">
+                    <label for="" class="label">Formato</label>
+                    <div class="control has-icons-left">
+                      <input type="text" name="formato"  class="input" required>
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-lock"></i>
+                      </span>
+                  </div>
+                  </div>
+                  <div class="field">
+                    <label for="" class="label">Volumen</label>
+                    <div class="control has-icons-left">
+                      <input type="text" name="volumen" class="input" required>
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-lock"></i>
+                      </span>
+                  </div>
+                  </div>
+                  <div class="field">
+                      <select name="editorial">
+                          {% for editorial in consulta_editorial %}
+                            <option value="{{editorial.id_editorial}}">{{editorial.nombre_editorial}}</option>
+                            {% endfor %}
+                      </select>
+                  </div>
+
+                  <div class="field">
+                    <select name="genero">
+                        {% for genero in consulta_genero %}
+                          <option value="{{genero.id_genero}}">{{genero.nombre_genero}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="field">
+                    <select name="autor">
+                        {% for autor in consulta_autor %}
+                          <option value="{{autor.id_autor}}">{{autor.nombre_autor}}</option>
+                          {% endfor %}
+                    </select>
+                </div>
+                <div class="field">
+                  <button class="button is-success">
+                    Registrar Libro
+                  </button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

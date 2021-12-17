@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <section class="hero is-primary is-fullheight">
+</ul>
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+            <!--Formulario-->
+            <form action="/modificar_autor" method="post" class="box"> 
+              <div class="field">
+                <label for="" class="label">Nombre autor</label>
+                <div class="control has-icons-left">
+                  <input type="text" name="nombre_autor" class="input" required value="{{autor.nombre_autor}}">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                </div>
+                </div>
+                <div class="field">
+                    <label for="" class="label">Fecha nacimiento</label>
+                    <div class="control has-icons-left">
+                      <input type="date" name="fecha_nac" class="input" required value="{{autor.fecha_nac}}" >
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-envelope"></i>
+                      </span>
+                    </div>
+                    </div>
+                <div class="field">
+                  <label for="" class="label">Nacionalidad</label>
+                  <div class="control has-icons-left">
+                    <input type="text" name="nacionalidad"  class="input" required  value="{{autor.nacionalidad}}">
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-lock"></i>
+                    </span>
+                </div>
+                </div>
+                <input name="idautor" type="hidden" value="{{autor.id_autor}}">
+                <div class="field">
+                  <button class="button is-success">
+                    Modificar Autor
+                  </button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

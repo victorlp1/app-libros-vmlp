@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+  <section class="hero is-primary is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+            <!--Formulario-->
+            <form action="/modificar_genero" method="post" class="box">
+              <div class="field">
+                <label for="" class="label">Nombre genero</label>
+                <div class="control has-icons-left">
+                  <input type="text" name="nombre_genero" class="input" required value="{{genero.nombre_genero}}">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                </div>
+                </div>
+                <input name="idgenero" type="hidden" value="{{genero.id_genero}}">
+                <div class="field">
+                  <button class="button is-success">
+                    Modificar genero
+                  </button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

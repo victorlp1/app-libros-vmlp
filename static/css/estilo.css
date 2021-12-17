@@ -1,0 +1,29 @@
+.nav_menu{
+    background-color: burlywood;
+    
+    
+}
+
+li{
+    display: inline-block;
+    border-right: 10px solid rgb(53, 182, 182);
+    text-align: center;
+    padding: 14px 16px;
+}
+
+
+table, th, td{
+    justify-content: center;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(233, 230, 221);
+} 
+
+.nav{
+    text-align: center;
+    display: inline-block;
+    background-color: cornsilk;
+    width: 150px;
+
+}

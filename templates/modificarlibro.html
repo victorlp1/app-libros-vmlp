@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+  <section class="hero is-primary is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+            <form action="/modificar_libro" method="post" class="box">
+              <div class="field">
+                <label for="" class="label">Titulo libro</label>
+                <div class="control has-icons-left">
+                  <input type="text" name="titulo_libro" class="input" required value="{{libro.titulo_libro}}">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                </div>
+                </div>
+                <div class="field">
+                  <label for="" class="label">Fecha de publicacion</label>
+                  <div class="control has-icons-left">
+                    <input type="date" name="fecha_publicacion" class="input" required value="{{libro.fecha_publicacion}}">
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-lock"></i>
+                    </span>
+                </div>
+                </div>
+                <div class="field">
+                    <label for="" class="label">Numero de paginas</label>
+                    <div class="control has-icons-left">
+                      <input type="text" name="numero_paginas" class="input" required value="{{libro.numero_paginas}}">
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-lock"></i>
+                      </span>
+                  </div>
+                  </div>
+                  <div class="field">
+                    <label for="" class="label">Formato</label>
+                    <div class="control has-icons-left">
+                      <input type="text" name="formato"  class="input" required value="{{libro.formato}}">
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-lock"></i>
+                      </span>
+                  </div>
+                  </div>
+                  <div class="field">
+                    <label for="" class="label">Volumen</label>
+                    <div class="control has-icons-left">
+                      <input type="text" name="volumen" class="input" required value="{{libro.volumen}}">
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-lock"></i>
+                      </span>
+                  </div>
+                  </div>
+                  <div class="field">
+                      <select name="editorial">
+                          {% for editorial in consulta_editorial %}
+                            <option value="{{editorial.id_editorial}}">{{editorial.nombre_editorial}}</option>
+                            {% endfor %}
+                      </select>
+                  </div>
+
+                  <div class="field">
+                    <select name="genero">
+                        {% for genero in consulta_genero %}
+                          <option value="{{genero.id_genero}}">{{genero.nombre_genero}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="field">
+                    <select name="autor">
+                        {% for autor in consulta_autor %}
+                          <option value="{{autor.id_autor}}">{{autor.nombre_autor}}</option>
+                          {% endfor %}
+                    </select>
+                </div>
+                <input type="hidden" name="idlibro"  value="{{libro.id_libro}}">
+                <div class="field">
+                  <p class="control is-expanded">
+                    <input class="button is-success" type="submit" value="Editar Libro">
+                  </p>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

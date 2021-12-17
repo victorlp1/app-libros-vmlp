@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<section class="hero is-primary is-fullheight header-image">
+  <div class="hero-body">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>Autor</th>
+                            <th>Fecha de Nacimiento</th>
+                            <th>Nacionalidad</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for autor in autores %}
+                        <tr>
+                            <td>{{autor.nombre_autor}}</td>
+                            <td>{{autor.fecha_nac}}</td>
+                            <td>{{autor.nacionalidad}}</td>
+                            <td><a class="fa fa-pencil-alt" href="/editarautor/{{autor.id_autor}}"></a></td>
+                            <td><a class="fa fa-backspace"  href="/eliminarautor/{{autor.id_autor}}"></a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                </script>
+            </form>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

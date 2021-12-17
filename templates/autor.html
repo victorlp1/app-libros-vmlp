@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+  <section class="hero is-primary is-fullheight">
+    <div class="hero-body" style="background-image: url('https://i1.wp.com/www.julianmarquina.es/wp-content/uploads/La-UNESCO-proclamo-en-1995-el-23-de-abril-como-el-Dia-Mundial-de-Libro-y-del-Derecho-de-Autor.jpg?fit=1000%2C474&ssl=1');">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+            <!--Formulario-->
+            <form action="/registrarAutor" method="post" class="box">
+              <div class="field">
+                <label for="" class="label">Nombre autor</label>
+                <div class="control has-icons-left">
+                  <input type="text" name="nombre_autor" class="input" required>
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                </div>
+                </div>
+                <div class="field">
+                    <label for="" class="label">fecha nacimiento</label>
+                    <div class="control has-icons-left">
+                      <input type="date" name="fecha_nac" class="input" required>
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-envelope"></i>
+                      </span>
+                    </div>
+                    </div>
+                <div class="field">
+                  <label for="" class="label">Nacionalidad</label>
+                  <div class="control has-icons-left">
+                    <input type="text" name="nacionalidad"  class="input" required>
+                    <span class="icon is-small is-left">
+                      <i class="fa fa-lock"></i>
+                    </span>
+                </div>
+                </div>
+                <div class="field">
+                  <button class="button is-success">
+                    Registrar
+                  </button>
+                </div>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </section>
+{% endblock %}

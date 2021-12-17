@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="hero is-primary is-fullheight header-image">
+  <div class="hero-body">
+    
+      <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                  
+          <thead>
+            <tr>
+              <th>Id libro</th>
+              <th>Titulo del libro</th>
+              <th>Fecha de publicacion </th>
+              <th>Numero de paginas </th>
+              <th>Formato</th>
+              <th>Volumen</th>
+              <th>Editorial</th>
+              <th>Autor</th>
+              <th>Genero</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
+              <th>Favorito</th>        
+            </tr>
+          </thead>
+          <tbody>
+            {% for libro in consulta %}
+              <tr>
+                <td>{{libro.id_libro}}</td>
+                <td>{{libro.titulo_libro}}</td>
+                <td>{{libro.fecha_publicacion}}</td>
+                <td>{{libro.numero_paginas}}</td>
+                <td>{{libro.formato}}</td>
+                <td>{{libro.volumen}}</td>
+                <td>{{libro.nombre_editorial}}</td>
+                <td>{{libro.nombre_autor}}</td>
+                <td>{{libro.nombre_genero}}</td>
+              
+
+                <td><a class="fa fa-pencil-alt" href="/editar_libro/{{libro.id_libro}}"></a></td>
+                <td><a class="fa fa-backspace" href="/eliminar_libro/{{libro.id_libro}}"></a></td>
+                <td><a class="fa fa-check" href="/agregarFavorito/{{libro.id_libro}}"></a></td> 
+              </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
